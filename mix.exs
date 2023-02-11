@@ -82,7 +82,7 @@ defmodule FoodElxpro.MixProject do
         "credo --strict",
         "ecto.rollback --all",
         "ecto.migrate",
-        "coveralls",
+        "coveralls.html",
         "sobelow --config"
       ]
     ]
