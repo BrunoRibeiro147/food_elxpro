@@ -16,7 +16,8 @@ defmodule FoodElxpro.MixProject do
         coveralls: :test,
         "coveralls.detail": :test,
         "coveralls.post": :test,
-        "coveralls.html": :test
+        "coveralls.html": :test,
+        ci: :test
       ]
     ]
   end
@@ -58,7 +59,7 @@ defmodule FoodElxpro.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
-      {:sobelow, "~> 0.8", only: :dev},
+      {:sobelow, "~> 0.8", only: [:test, :dev]},
       {:dialyxir, "~> 0.5.0", only: [:dev, :test], runtime: false},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev}
     ]
@@ -82,7 +83,7 @@ defmodule FoodElxpro.MixProject do
         "credo --strict",
         "ecto.rollback --all",
         "ecto.migrate",
-        "coveralls.html",
+        "coveralls",
         "sobelow --config"
       ]
     ]
